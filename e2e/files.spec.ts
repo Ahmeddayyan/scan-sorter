@@ -20,7 +20,7 @@ test.describe('text-layer PDFs', () => {
     await addFilesAndWait(page, ['shuffled-missing7-dup4.pdf']);
     expect(await numbersInOrder(page)).toEqual(['1', '2', '3', '4', '4', '5', '6', '8', '9', '10', '11', '12']);
     expect(await gapTexts(page)).toEqual(['Page 7 missing']);
-    await expect(headline(page)).toHaveText('1 page missing · 1 duplicate');
+    await expect(headline(page)).toHaveText('1 page missing, 1 duplicate');
     await expect(page.getByRole('button', { name: 'Page 4 was scanned twice' })).toBeVisible();
     await expect(page.locator('.problems')).toBeHidden();
     // thumbnails are real renders (object URLs), portrait Letter pages

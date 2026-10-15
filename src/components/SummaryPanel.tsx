@@ -78,12 +78,13 @@ export function SummaryPanel() {
         <strong className="num">
           {head.parts.length > 0
             ? head.parts.map((part, i) => (
-                // A breakable space between clauses; the separator travels with the clause.
+                // A breakable space between clauses; the comma stays at the end of its clause,
+                // so a wrapped line never starts with punctuation.
                 <Fragment key={part}>
                   {i > 0 ? ' ' : null}
                   <span className="summary__part">
-                    {i > 0 ? '· ' : ''}
                     {part}
+                    {i < head.parts.length - 1 ? ',' : ''}
                   </span>
                 </Fragment>
               ))

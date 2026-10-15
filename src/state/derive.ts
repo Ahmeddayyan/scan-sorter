@@ -101,7 +101,7 @@ export function headline(report: DocumentReport, processing: boolean): Headline 
   if (parts.length === 0) {
     return { tone: 'ok', text: `All ${plural(s.pages, 'page')} in order`, detail: null, parts: [] };
   }
-  return { tone: 'attention', text: parts.join(' · '), detail: `${plural(s.pages, 'page')} in total`, parts };
+  return { tone: 'attention', text: parts.join(', '), detail: `${plural(s.pages, 'page')} in total`, parts };
 }
 
 /** Light "are you sure" reasons shown before download. Empty = go straight ahead. */

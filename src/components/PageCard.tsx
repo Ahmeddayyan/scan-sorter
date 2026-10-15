@@ -80,6 +80,9 @@ function PageCardImpl({
             pending={pending}
           />
         </button>
+      </div>
+      {/* Badge sits below the thumbnail so it never hides a printed header number. */}
+      <div className="page-card__info">
         <button
           type="button"
           className={`badge badge--${badge.tone} page-card__badge`}
@@ -90,9 +93,9 @@ function PageCardImpl({
           {iconName ? <Icon name={iconName} className={badge.icon === 'spinner' ? 'spinner' : undefined} /> : null}
           <span className="num">{badge.text}</span>
         </button>
-      </div>
-      <div className="page-card__meta" title={page.label}>
-        {page.label}
+        <div className="page-card__meta" title={page.label}>
+          {page.label}
+        </div>
       </div>
       <div className="page-card__actions">
         <button

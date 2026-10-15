@@ -434,7 +434,7 @@ session clears the demo first and removes `?demo` from the URL.
   read number as a manual override) and *Change* (opens the number editor).
 - `unnumbered`: "No page number" list with *Set number*; `assignment.source === 'manual'` means the user chose that.
 - `notes`: info rows (`starts-above-one`, `total-detected`, `trailing-missing`, `manual-order`, `no-numbers-found`, `front-matter`).
-- `summary` for the header: "All 16 pages in order" or "1 page missing · 1 duplicate · 2 unnumbered · 5 to confirm"
+- `summary` for the header: "All 16 pages in order" or "1 page missing, 1 duplicate, 2 unnumbered, 5 to confirm"
   (`derive.ts` → `headline()`; the clauses are `parts`, rendered so lines break only between clauses).
 
 ### 7.5 Export

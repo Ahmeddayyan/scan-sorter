@@ -45,7 +45,7 @@ not read show a "?" badge and you can set their numbers by hand, add more files,
 
 When reading finishes, the summary panel (on the right on a computer, above the pages on a
 phone, where you tap its header to open it) says either "All 16 pages in order" or what needs a
-look, for example "1 page missing · 1 duplicate · 2 unnumbered". Each row in the panel is
+look, for example "1 page missing, 1 duplicate, 2 unnumbered". Each row in the panel is
 clickable and jumps to the page it is about. See "What the warnings mean" below.
 
 ### 4. Fix or reorder

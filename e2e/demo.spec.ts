@@ -8,7 +8,7 @@ test.describe('demo review screen', () => {
   });
 
   test('headline, gap tile and order @dev', async ({ page }) => {
-    await expect(headline(page)).toHaveText(/1 page missing · 1 duplicate · 1 conflict · 2 unnumbered · \d+ to confirm/);
+    await expect(headline(page)).toHaveText(/1 page missing, 1 duplicate, 1 conflict, 2 unnumbered, \d+ to confirm/);
     await expect(page.locator('.app-header__demo')).toHaveText('Demo data');
     expect(await gapTexts(page)).toEqual(['Page 14 missing']);
     const numbers = await numbersInOrder(page);
