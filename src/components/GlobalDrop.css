@@ -1,0 +1,38 @@
+.global-drop {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-overlay);
+  display: grid;
+  place-items: center;
+  padding: var(--space-4);
+  background: var(--color-backdrop);
+  pointer-events: none;
+}
+
+.global-drop__card {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-2);
+  width: min(420px, 100%);
+  padding: var(--space-6) var(--space-5);
+  border: 3px dashed var(--color-accent);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-lg);
+  text-align: center;
+}
+
+.global-drop__card .icon {
+  width: 40px;
+  height: 40px;
+  color: var(--color-accent);
+}
+
+.global-drop__card strong {
+  font-size: var(--text-lg);
+}
+
+.global-drop__card span {
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}

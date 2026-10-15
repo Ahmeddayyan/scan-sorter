@@ -1,0 +1,48 @@
+.toolbar {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2) var(--space-4);
+  padding: var(--space-3) var(--gutter);
+  margin: 0 calc(-1 * var(--gutter));
+  border-bottom: 1px solid var(--color-border);
+  background: color-mix(in srgb, var(--color-bg) 92%, transparent);
+  backdrop-filter: blur(8px);
+}
+
+.toolbar__group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.toolbar__group--end {
+  margin-left: auto;
+}
+
+.toolbar__download {
+  min-height: 42px;
+}
+
+/* Phones: icon-only undo/redo, "Start over" at the right of the first row, the download
+   button full-width on its own row. */
+@media (max-width: 599px) {
+  .toolbar__label {
+    display: none;
+  }
+  .toolbar__icon-btn {
+    padding: 0 var(--space-3);
+  }
+  .toolbar__download {
+    flex: 1 1 100%;
+  }
+  /* The "Order set by hand" banner above the grid carries this action; keep the sticky bar short. */
+  .toolbar__auto-order {
+    display: none;
+  }
+}

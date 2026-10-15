@@ -1,0 +1,34 @@
+.page-grid {
+  display: grid;
+  gap: var(--space-4);
+  min-width: 0;
+}
+
+.page-grid__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--thumb-width), 1fr));
+  gap: var(--space-3);
+  min-width: 0;
+}
+
+.page-grid__manual {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--color-manual);
+  border-radius: var(--radius-md);
+  background: var(--color-manual-bg);
+  color: var(--color-manual);
+  font-size: var(--text-sm);
+}
+
+.page-grid__manual p {
+  flex: 1 1 220px;
+  min-width: 0;
+}
+
+.page-grid__manual .btn {
+  color: var(--color-text);
+}
