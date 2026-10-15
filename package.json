@@ -4,6 +4,10 @@
   "version": "0.1.0",
   "type": "module",
   "description": "Put shuffled scans back in order. Find missing pages. Nothing leaves your device.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.12"
+  },
   "scripts": {
     "postinstall": "node scripts/copy-assets.mjs",
     "assets": "node scripts/copy-assets.mjs",

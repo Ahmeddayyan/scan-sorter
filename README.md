@@ -53,6 +53,10 @@ What is and is not network traffic:
 - **The OCR language data is cached in IndexedDB** by tesseract.js after its first download, so
   later visits do not fetch it again. Clearing site data in your browser removes it.
 - **No telemetry and no analytics.**
+- **The browser enforces it.** The deployed site sends a Content-Security-Policy (see
+  `vercel.json`) whose `connect-src`, `script-src` and `img-src` allow only the app's own origin
+  (plus local `blob:`/`data:` URLs), so even a bug could not send a request elsewhere.
+  `vite preview` serves the same headers, so the e2e suite runs under the production policy.
 
 ### How to verify it yourself
 
@@ -68,7 +72,7 @@ origin and fails if one was attempted, including the OCR worker's own downloads.
 
 ## Quick start
 
-Requirements: **Node.js 24 or newer** and npm. The end-to-end tests additionally need
+Requirements: **Node.js 22.12 or newer** (developed on 24) and npm. The end-to-end tests additionally need
 **Microsoft Edge** installed (Playwright drives it; no browser download).
 
 ```bash
@@ -97,6 +101,14 @@ Then open the URL that Vite prints.
 
 Generated folders (`public/tesseract/`, `public/pdfjs/`, `test-fixtures/generated/`,
 `e2e/screenshots/`, `test-results/`) are not committed. They are recreated by the scripts above.
+
+### Deployment
+
+The app is a static site deployed on Vercel. `vercel.json` sets the build (`npm ci`,
+`npm run build`, output `dist/`), the security headers, and caching: hashed files in
+`/assets/` are cached for a year, while the OCR and pdf.js files are cached for a week. Every
+push to `main` redeploys. Any static host works if it serves `dist/` with the same headers. If
+you change the inline theme script in `index.html`, update its `sha256-…` hash in the CSP.
 
 ## How it works
 
@@ -233,7 +245,7 @@ Read `docs/ARCHITECTURE.md` first. It describes the modules, the shared types in
 
 MIT, see [`LICENSE`](LICENSE).
 
-Copyright (c) 2026 Faraz Hayder
+Copyright (c) 2026 Ahmed Ayyan
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software
 and associated documentation files (the "Software"), to deal in the Software without restriction,
