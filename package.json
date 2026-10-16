@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "type": "module",
   "description": "Put shuffled scans back in order. Find missing pages. Nothing leaves your device.",
+  "homepage": "https://scansort.online",
   "license": "MIT",
   "engines": {
     "node": ">=22.12"

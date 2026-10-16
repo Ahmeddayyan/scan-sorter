@@ -2,6 +2,8 @@
 
 Put shuffled scans back in order. Find missing pages. Nothing leaves your device.
 
+**Use it at [scansort.online](https://scansort.online)**. Try [the sample pages](https://scansort.online/?demo) to see it without your own files.
+
 Scan Sorter is a browser app for putting a stack of scanned pages back in order. Drop in
 shuffled PDFs or phone photos of pages, let the app read the printed page numbers, check the
 result for gaps and duplicates, fix what it could not read, and download a sorted PDF. Everything
@@ -104,7 +106,7 @@ Generated folders (`public/tesseract/`, `public/pdfjs/`, `test-fixtures/generate
 
 ### Deployment
 
-The app is a static site deployed on Vercel. `vercel.json` sets the build (`npm ci`,
+The app is a static site deployed on Vercel at [scansort.online](https://scansort.online) (the bare domain redirects to `www`; DNS is managed at Hostinger). `vercel.json` sets the build (`npm ci`,
 `npm run build`, output `dist/`), the security headers, and caching: hashed files in
 `/assets/` are cached for a year, while the OCR and pdf.js files are cached for a week. Every
 push to `main` redeploys. Any static host works if it serves `dist/` with the same headers. If
